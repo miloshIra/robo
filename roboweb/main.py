@@ -1,16 +1,23 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from flask import Flask, Response, request
+from func.service import Arm
+import time
+app = Flask(__name__)
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+@app.route('/')
+def hello_world():
+    return "<center> <br> <h1>Hello, World!</p>"
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+@app.route('/index')
+def index():
+    return "<center> <br> <h2>This is the index page</h2>"
+
+
+@app.route('/move')
+def move():
+    def inner():
+        yield "....Moving x-axis to the right"
+        # Arm.move_x_axis()
+        yield "<br>....Movement done"
+    return Response(inner())
