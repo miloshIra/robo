@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<center>
+    <h2>These are your images, press download button to download.</h2>
+<br>
+<br>
+
+<div class="image-container">
+    <div class="image-box">
+<img class="cut-image"  src="/static/results/cut1.jpg" alt="Girl in a jacket">
+    </div>
+    <div class="image-box">
+<img class="cut-image" src="/static/results/cut2.jpg" alt="Girl in a jacket">
+    </div>
+    <div class="image-box">
+<img class="cut-image" src="/static/results/cut3.jpg" alt="Girl in a jacket">
+    </div>
+</div>
+
+    <div class="download-button-container">
+        <center>
+        <a class="download-anchor" href="/static/results/cut1.jpg" download style="float:center"><h5>Download</h5></a>
+        <a class="download-anchor" href="/static/results/cut2.jpg" download style="float:center"><h5>Download</h5></a>
+        <a class="download-anchor" href="/static/results/cut3.jpg" download style="float:center"><h5>Download</h5></a>
+        </center>
+    </div>
+
+
+
+<br>
+<br>
+
+</center>
+
+{% endblock %}

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/roboweb.iml" filepath="$PROJECT_DIR$/.idea/roboweb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/splitcrop-web-flask.iml" filepath="$PROJECT_DIR$/.idea/splitcrop-web-flask.iml" />
     </modules>
   </component>
 </project>

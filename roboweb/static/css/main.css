@@ -1,0 +1,76 @@
+
+
+.greeting {
+    margin-top: 200px;
+    text-align:center;
+}
+
+.home-message {
+    margin-top: 30px;
+    text-align: center;
+
+}
+
+.left-side {
+    text-align: right;
+}
+
+.left-button {
+    text-align: right;
+}
+
+.border-line {
+    border-right: 3px solid #C3B091;
+}
+
+.anchor-buttons {
+    color: #C3B091
+}
+
+.form-group {
+
+    margin-top: 20px;
+    text-align: center;
+}
+
+.login-submit {
+    margin-top: 10px;
+}
+
+.photo-input-form {
+    display: none;
+}
+
+#photo-input-message {
+    margin-right: 20px;
+}
+
+.image-box{
+    display: inline;
+    align: center;
+    padding: 2px;
+}
+
+.download-anchor {
+    display: inline;
+}
+
+#photo {
+    background: white;
+    padding: 8px;
+    border-radius: 0px 20px 20px 0px;
+}
+
+#photo:hover {
+    border: 2px solid;
+}
+
+
+.reg-button, .login-button {
+    clear: left;
+}
+
+.forgot-pass {
+ margin-top: 10px;
+ margin-bottom: 15px;
+}

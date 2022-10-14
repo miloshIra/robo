@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+<form method="post" action="/split" enctype="multipart/form-data">
+  <div class="form-group d-flex justify-content-center">
+      <label id="photo-input-message">Please choose a photo you want to split|crop   </label><label id=photo for="photo-input">Choose Photo</label>
+    <input type="file" class="photo-input-form" id="photo-input" accept="image/jpeg, image/png" name="image">
+  </div>
+    <center>
+        <input type="submit" value="Split" />
+        <input type="button" value="Home"  />
+
+<!--</form>-->
+<!--<form method="get" action="/split"> -->
+
+ </center>
+    </form>
+{% endblock %}

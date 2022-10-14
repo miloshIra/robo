@@ -1,23 +1,36 @@
-from flask import Flask, Response, request
-from func.service import Arm
-import time
-app = Flask(__name__)
 
 
-@app.route('/')
-def hello_world():
-    return "<center> <br> <h1>Hello, World!</p>"
+def rotate_x_axis(image):
+    pass
 
 
-@app.route('/index')
-def index():
-    return "<center> <br> <h2>This is the index page</h2>"
+def rotate_y_axis(image):
+    pass
 
 
-@app.route('/move')
-def move():
-    def inner():
-        yield "....Moving x-axis to the right"
-        # Arm.move_x_axis()
-        yield "<br>....Movement done"
-    return Response(inner())
+def rotate_z_axis(image):
+    pass
+
+
+def move_x_axis_left():
+    pass
+
+
+def move_x_axis_right():
+    pass
+
+
+def move_y_axis_left():
+    pass
+
+
+def move_y_axis_right():
+    pass
+
+
+def move_z_axis_left():
+    pass
+
+
+def move_z_axis_right():
+    pass

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="content-main">
+    <div class="row">
+      <div class="col-sm-6 border-line">
+          {% if 'username' not in session %}
+            <h5 class="left-side">For more information please see: </h5>
+          <br>
+          <a class="anchor-buttons" href="/info"><h3 class="left-button">Info</h3></a>
+          <br>
+          {% else %}
+          <h5 class="left-side"> To get the job done fast go to: </h5>
+          <br>
+          <a class="anchor-buttons" href="/home"><h3 class="left-button">Split</h3></a>
+          <br>
+          {% endif %}
+      </div>
+
+          <div class="col-sm-6 border-line" id="content-mutable-1" style="display:block">
+              {% if 'username' not in session %}
+          <h5 class="right-side">To use our image <br> cropping service please:</h5>
+          <a class="anchor-buttons" href="#login" id="login" onclick="swap_div_login()"><h3>Login</h3></a>
+              <h5>or</h5>
+              <a class="anchor-buttons" href="#register" id="register" onclick="swap_div_register()"><h3>Registering</h3></a>
+      </div>
+      <div class="col-sm-6 border-line" id="content-mutable-2" style="display:none">
+        <h5> Please enter your:  </h5>
+          <form class="login-form" action="/auth/login" method="post">
+              <h6><label id="email-label">Email: </label></h6>
+              <input type="email" name="email">
+              <h6><label id="password-label">Password: </label></h6>
+              <input type="password" name="password">
+              <br>
+              <h6 class="forgot-pass"><a href="/forgot-password">I forgot</a> my username or/and password? </h6>
+              <input type="submit" class="login-anchor">
+          </form>
+      </div>
+        <div class="col-sm-6 border-line" id="content-mutable-3" style="display:none">
+            <h5> Please provide the following:  </h5>
+         <form id="register-form" action="auth-register" method="post">
+             <h6><label id="username-label" >Username: </label></h6>
+              <input type="text" id="username" name="username">
+              <h6><label id="email-label-reg">Email: </label></h6>
+              <input type="email" id="email" name="email">
+              <h6><label id="password-label-reg">Password: </label></h6>
+              <input type="password" id="password" name="password">
+             <br>
+             <br>
+             <button type="submit" class="reg-button">Register</button>
+          </form>
+            {% else %}
+            <h5> Thank you for using our service <3: </h5>
+            <br>
+
+            <a class="anchor-buttons" href="signout/" id="logout" onclick="swap_div_login()"><h3>Logout</h3></a>
+            {% endif %}
+        </div>
+</div>
+</div>
+
+{% endblock %}
