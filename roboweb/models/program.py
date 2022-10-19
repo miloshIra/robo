@@ -19,3 +19,4 @@ class Program:
     def save_program(self):
         """Saves the User to the database"""
         Database.insert("users", self.json())
+

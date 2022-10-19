@@ -32,6 +32,8 @@ def info():
     return render_template('info.html')
 
 
+# < ------------------------------ USER LOGIC ------------------------------>
+
 @app.route('/auth-register', methods=['POST', 'GET'])
 def register_user():
     username = request.form['username']
@@ -57,6 +59,16 @@ def login_user():
     print(session)
     return redirect(url_for('home_template'))
 
+
+@app.route('/signout/')
+def sing_out():
+    session.clear()
+    print("logged out")
+    print(session)
+    return redirect("/")
+
+
+# <------------------------------------ TEMPLATES ---------------------------------->
 
 @app.route('/home')
 def home_template():
@@ -89,6 +101,8 @@ def split_image():
 def login_template():
     return render_template('login.html')
 
+
+# <------------------------- PASSWORD HANDLING -------------------------------->
 
 @app.route('/forgot-password', methods=['POST', 'GET'])
 def forgot_password():
@@ -132,14 +146,6 @@ def set_new_password():
         return redirect(url_for('start_template'))
     else:
         return "Passwords don't match please go back and try again."
-
-
-@app.route('/signout/')
-def sing_out():
-    session.clear()
-    print("logged out")
-    print(session)
-    return redirect("/")
 
 
 if __name__ == '__main__':
