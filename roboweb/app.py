@@ -1,15 +1,17 @@
 from flask import Flask, render_template, request, session, redirect, url_for
+from flask_socketio import SocketIO
 from models.user import User
 from models.program import Program
 from common.database import Database
 import main
 import time
-from PIL import Image
 import random
 
 
 app = Flask(__name__)
 app.secret_key = "Ira"
+
+socket = SocketIO(app)
 
 
 @app.before_first_request
@@ -77,24 +79,14 @@ def home_template():
     return render_template('home.html')
 
 
+@socket.on('message')
+def handle_message(msg):
+    socket.send("hello world")
+
+
 @app.route('/split', methods=['POST', 'GET'])
 def split_image():
-    if request.method == 'POST':
-        image = request.files['image']
-        image = Image.open(image)
-        image_parts = main.split_to_three(image)  # remnants of the past..
-        return render_template("split.html")
-        # return send_from_directory(".", image_parts[0])
-    else:
-        return render_template('split.html')
-    # if request.form['divide_count'] == 2:
-    #     main.split_to_two(image)
-    # elif request.form['divide_count'] == 3:
-    #     main.split_to_three(image)
-    # elif request.form['divide_count'] == 6:
-    #     main.split_to_six(image)
-
-    # general login of how it should work, just a quick idea need to add a lot of stuff.
+    return render_template('split.html')
 
 
 @app.route('/login')
@@ -149,4 +141,4 @@ def set_new_password():
 
 
 if __name__ == '__main__':
-    app.run(port=2000, debug=True)
+    socket.run(app)

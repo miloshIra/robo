@@ -10,6 +10,9 @@ class Program:
         self.created = datetime.datetime.now()
         self.user = user
 
+    class Meta:
+        ordering = '-created'
+
     def json(self):
         return {
             "g_code": self.g_code,

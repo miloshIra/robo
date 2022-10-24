@@ -2,14 +2,14 @@ import serial
 import time
 
 # WE NEED SOCKETSIO FOR THIS TO WORK <3 !!!!!!!
+#
+# serial_com = serial.Serial('COM5', 9600)
+# serial_com.timeout = 1
 
-serial_com = serial.Serial('COM5', 9600)
-serial_com.timeout = 1
-# asdasdasdasdasdasda#############
 
 def rotate_x_axis(request):
-    serial_com.write().endode()
-
+    #serial_com.write().endode()
+    pass
 
 def rotate_y_axis(request):
     pass
