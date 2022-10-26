@@ -2,18 +2,84 @@
 {% block content %}
 
 
+    <div class="container">
+        <div class="row justify-content-center">
+              <div class="col-xs-6 col-sm-6 col-md-6">
 
-<form method="post" action="/split" enctype="multipart/form-data">
-  <div class="form-group d-flex justify-content-center">
-      <img src="static/images/ScaraRob1.jpg" alt="None" width="300" height="320">
+                  <div class="row">
+                      <div class="col-xs-6 col-sm-6 col-md-6">
+                      <center>
+                      <br>
 
-  </div>
-    <center>
-        <br>
-        <input type="button" value="Left"/>
-        <input type="button" value="Right"/>
+                      <h3> Forward Kinematics </h3>
+                          <br>
+                          <br>
+                  <div>
+                      <div>
+                  <label for="Joint1"><strong>JOINT 1</strong></label>
+                  <input type="range" min="1" max="100" value="50" class="slider" id="Joint1">
+                  </div>
+                      <input type="button" value="JOG -"/>
+                  <input type="text" size="3" maxlength="3">
+                  <input type="button" value="JOG +"/>
+                  </div>
+                  <br>
+                  <div>
+                      <div>
+                  <label for="Joint1"><strong>JOINT 2</strong></label>
+                  <input type="range" min="1" max="100" value="50" class="slider" id="Joint2">
+                 </div>
+                      <input type="button" value="JOG -"/>
+                  <input type="text" size="3" maxlength="3">
+                  <input type="button" value="JOG +"/>
+                  </div>
+                  <br>
+                  <div>
+                      <div>
+                  <label for="Joint1"><strong>JOINT 3</strong></label>
+                  <input type="range" min="1" max="100" value="50" class="slider" id="Joint3">
+                  </div>
+                          <input type="button" value="JOG -"/>
+                  <input type="text" size="3" maxlength="3">
+                  <input type="button" value="JOG +"/>
+                  </div>
+                  <br>
+                  <div>
+                      <div>
+                  <label for="Joint1"><strong>JOINT Z</strong></label>
+                  <input type="range" min="1" max="100" value="50" class="slider" id="JointZ">
+                  </div>
+                          <input type="button" value="JOG -"/>
+                  <input type="text" size="3" maxlength="3">
+                  <input type="button" value="JOG +"/>
+                  </div>
+                  <br>
+                      </center>
+                          </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                      <center>
+                          <br>
+
+                      <h3> Inverse Kinematics </h3>
+                      </center>
+                      </div>
+                  </div>
 
 
- </center>
-    </form>
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <center>
+                    <br>
+                    <br>
+                    <br>
+                <img src="static/images/ScaraRob1.jpg" alt="None" width="320" height="350">
+                </center>
+            </div>
+
+        </div>
+
+        </div>
+
+
 {% endblock %}

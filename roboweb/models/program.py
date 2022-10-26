@@ -13,6 +13,12 @@ class Program:
     class Meta:
         ordering = '-created'
 
+    @classmethod
+    def get_programs_by_user(cls, user):
+        data = Database.find("programs", {"user": user})
+        if data is not None:
+            return cls(**data)
+
     def json(self):
         return {
             "g_code": self.g_code,
@@ -21,5 +27,5 @@ class Program:
 
     def save_program(self):
         """Saves the User to the database"""
-        Database.insert("users", self.json())
+        Database.insert("programs", self.json())
 

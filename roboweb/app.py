@@ -13,6 +13,8 @@ app.secret_key = "Ira"
 
 socket = SocketIO(app)
 
+# <----------------- SETUP FUNCTIONS ----------------------->
+
 
 @app.before_first_request
 def initialize_database():
@@ -23,6 +25,8 @@ def initialize_database():
 def make_session_permanent():
     session.permanent = True
 
+
+# <------------------- BASIC ROUTES ------------------------>
 
 @app.route('/')
 def start_template():
